@@ -4,6 +4,14 @@ import java.util.*;
 
 public class LonelyInteger {
 
+    static int lonelyIntegerUsingXOR(List<Integer> a) {
+        int unique = 0;
+        for(Integer element : a) {
+            unique ^= element;
+        }
+        return unique;
+    }
+
     static int lonelyInteger(List<Integer> a) {
         Map<Integer, Integer> map = new HashMap<>();
         for (Integer element : a) {
