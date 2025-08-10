@@ -1,14 +1,24 @@
 package lonelyInteger;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class LonelyInteger {
 
     static int lonelyInteger(List<Integer> a) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (Integer element : a) {
+            if (map.containsKey(element)) {
+                int curr = map.get(element);
+                map.replace(element, curr + 1);
+            } else {
+                map.put(element, 1);
+            }
+        }
 
-        return 0;
+        for (int key : map.keySet()) {
+            if (map.get(key) == 1) return key;
+        }
+        return -1;
     }
 
     public static void main(String[] args) {
