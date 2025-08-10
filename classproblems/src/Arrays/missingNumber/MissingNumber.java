@@ -1,4 +1,4 @@
-package missingNumber;
+package Arrays.missingNumber;
 
 public class MissingNumber {
 
